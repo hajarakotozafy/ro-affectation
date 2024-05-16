@@ -7,7 +7,7 @@ import { generateMatrixInputs } from '../../Services/GenerateMatrixInputs';
 
 import { SubmitForm2 } from '../../Services/SubmitForm2';
 
-const Form2 = () => {
+const Form2 = ({active, setActive}) => {
     const { affectationData, dispatch } = useContext(AffectationContext);
     return(
         <FormWrapper>
@@ -18,7 +18,7 @@ const Form2 = () => {
                 </Form2Control>
                 <BtnContainer>
                     <span>Résoudre :</span>
-                    <Button>en MIN</Button>
+                    <Button onClick={() => setActive(!active)}>en MIN</Button>
                     <Button>en MAX</Button>
                 </BtnContainer>
             </Form>

@@ -18,7 +18,14 @@ export const reducer = (state, action) => {
                 ...state, 
                 nbAff: action.nbAff, 
                 horizontalHeaders: action.horizontalHeaders, 
-                verticalHeaders: action.verticalHeaders
+                verticalHeaders: action.verticalHeaders,
+                initialAssignement: null,
+                minCol: null,
+                minRow: null,
+                zeroPerColumnMatrix: null,
+                zeroPerRowMatrix: null,
+                zeroParRangee: null,
+                solution: null
             }
         case 'resolve':
             return {

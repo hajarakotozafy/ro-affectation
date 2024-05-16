@@ -24,7 +24,7 @@ const Header = props => {
     );
   };
 
-const SolutionLayout = () => {   
+const SolutionLayout = ({active, setActive}) => {   
 
     const { affectationData, dispatch } = useContext(AffectationContext);
     return (
@@ -33,6 +33,7 @@ const SolutionLayout = () => {
                 <h3>
                     Résultats
                 </h3>
+                <button onClick={()=>setActive(!active)}>Menu</button>
             </SolutionLayoutTitle>
 
             <SolutionsLayoutTab>

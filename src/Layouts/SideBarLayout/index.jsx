@@ -3,13 +3,14 @@ import { SideBarLayoutContainer, SideBarLayoutTitle } from './SideBarLayout.styl
 import Form from '../../Components/Form';
 
 
-const SideBarLayout = () => {
+const SideBarLayout = ({active, setActive}) => {
     return (
-        <SideBarLayoutContainer>
+        <SideBarLayoutContainer active={active}>
             <SideBarLayoutTitle>
                 <h3>Affectation MIN MAX</h3>
+                <button onClick={()=>setActive(!active)}>X</button>
             </SideBarLayoutTitle>
-            <Form/>
+            <Form active={active} setActive={setActive}/>
         </SideBarLayoutContainer>
     )
 }
