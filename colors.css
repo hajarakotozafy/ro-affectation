@@ -1,2 +1,4 @@
-bleu ciel: #E0E9F0
-blue: #7DA1AF
+#test{
+    color: hsl(0, 80%, 60%);
+    color: hsl(120, 60%, 70%)
+}

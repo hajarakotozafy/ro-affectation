@@ -7,7 +7,8 @@ export const initialState = {
     minRow: null,
     zeroPerColumnMatrix: null,
     zeroPerRowMatrix: null,
-    zeroParRangee: null
+    zeroParRangee: null,
+    solution: null
 };
 
 export const reducer = (state, action) => {
@@ -27,7 +28,8 @@ export const reducer = (state, action) => {
                 minRow: action.minRow,
                 zeroPerColumnMatrix: action.zeroPerColumnMatrix,
                 zeroPerRowMatrix: action.zeroPerRowMatrix,
-                zeroParRangee: action.zeroParRangee
+                zeroParRangee: action.zeroParRangee,
+                solution: action.solution
             }
         default:
             return state;

@@ -46,6 +46,7 @@ const SolutionLayout = () => {
                                         <Table HTitle={affectationData.horizontalHeaders} VTitle={affectationData.verticalHeaders} affectation={affectationData.nbAff} values={affectationData.initialAssignement} BottomTitle={affectationData.minCol}/> 
                                         <Table HTitle={affectationData.horizontalHeaders} VTitle={affectationData.verticalHeaders} affectation={affectationData.nbAff} values={affectationData.zeroPerColumnMatrix} RightTitle={affectationData.minRow}/> 
                                         <Table HTitle={affectationData.horizontalHeaders} VTitle={affectationData.verticalHeaders} affectation={affectationData.nbAff} values={affectationData.zeroParRangee}/> 
+                                        <Table HTitle={affectationData.horizontalHeaders} VTitle={affectationData.verticalHeaders} affectation={affectationData.nbAff} values={affectationData.solution}/> 
                                     </>
                                     
                                     : ""}

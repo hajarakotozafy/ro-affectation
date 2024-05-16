@@ -1,4 +1,4 @@
-import { minimumOfColumn, zeroPerColumn, minimumOfRow, zeroPerRow } from "./Algo";
+import { minimumOfColumn, zeroPerColumn, minimumOfRow, zeroPerRow, encadrage } from "./Algo";
 
 
 export const SubmitForm2 = (e,nb, dispatch) => {
@@ -9,7 +9,7 @@ export const SubmitForm2 = (e,nb, dispatch) => {
     // const nbAff = Object.fromEntries(data.entries());
     // dispatch({type: 'addNbAff', nbAff: Number(nbAff.nbAff)})
     const initialAffectationValues = Object.values(initialAffectation).map(nb => Number(nb));
-    console.log(initialAffectationValues)
+    // console.log(initialAffectationValues)
     const initialAssignement = []
     for(let i = 0; i < nb; i++){
         initialAssignement.push({
@@ -23,9 +23,9 @@ export const SubmitForm2 = (e,nb, dispatch) => {
     const { initialMinRow, minRow } = minimumOfRow(Math.sqrt(nb), nb, matrixColWithZero);
     const { matrixRowWithZero } = zeroPerRow(initialMinRow, minRow, Math.sqrt(nb));
 
-    console.log("minCol", minCol);
-    console.log("colonne avec zéro et minLigne", matrixColWithZero, minRow);
-    console.log("rangé avec zéro", matrixRowWithZero);
+    // console.log("minCol", minCol);
+    // console.log("colonne avec zéro et minLigne", matrixColWithZero, minRow);
+    // console.log("rangé avec zéro", matrixRowWithZero);
 
     const minColToShow = []
     for(let i = 0; i < Math.sqrt(nb); i++){
@@ -65,6 +65,8 @@ export const SubmitForm2 = (e,nb, dispatch) => {
             color
         })
     }
+    
+    const matrixToCadre = encadrage(matrixRowWithZero, nb);
 
     dispatch({
         type: "resolve",
@@ -73,6 +75,7 @@ export const SubmitForm2 = (e,nb, dispatch) => {
         minRow: minRowToShow,
         zeroPerColumnMatrix: zeroParColonneToShow,
         zeroPerRowMatrix:zeroParLigneToShow,
-        zeroParRangee: zeroParRangee
+        zeroParRangee: zeroParRangee,
+        solution: matrixToCadre
     })
 }
