@@ -9,9 +9,9 @@ import SolutionLayout from './Layouts/SolutionLayout'
 const App = () => {
   const [affectationData, dispatch] = useReducer(reducer, initialState);
   const [ active, setActive ] = useState(false)
-  useEffect(() =>{
-    console.log("Evolution des données: ", affectationData);
-  }, [affectationData]);
+  // useEffect(() =>{
+  //   console.log("Evolution des données: ", affectationData);
+  // }, [affectationData]);
 
   return (
     <>

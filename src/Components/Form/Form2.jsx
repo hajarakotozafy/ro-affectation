@@ -11,15 +11,22 @@ const Form2 = ({active, setActive}) => {
     const { affectationData, dispatch } = useContext(AffectationContext);
     return(
         <FormWrapper>
-            <Form onSubmit={(e) => SubmitForm2(e, affectationData.nbAff*affectationData.nbAff, dispatch)}>
+            <Form onSubmit={(e) => SubmitForm2(e, affectationData.nbAff*affectationData.nbAff, dispatch, affectationData)}>
                 <FormTitle>Affectations initiales</FormTitle>
                 <Form2Control>
                     {generateMatrixInputs(affectationData.nbAff)}
                 </Form2Control>
                 <BtnContainer>
-                    <span>Résoudre :</span>
-                    <Button onClick={() => setActive(!active)}>en MIN</Button>
-                    <Button>en MAX</Button>
+                    <div className="radio-btn">
+                        <div className="radio-control">
+                            <input type="radio" name="choice" value="min" id='min'/> <label for='min'>MIN</label>
+                        </div>
+                        <div className="radio-control">
+                            <input type="radio" name="choice" value="max" id='max'/> <label for='max'>MAX</label>  
+                        </div>
+                    </div>
+                    {/* <span>Résoudre :</span> */}
+                    <Button onClick={() => setActive(!active)}>Résoudre</Button>
                 </BtnContainer>
             </Form>
         </FormWrapper>

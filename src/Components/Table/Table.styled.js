@@ -6,15 +6,15 @@ export const TableContainer = styled.div`
 `
 export const HorizontalH = styled.div`
     height: 36px;
-    width: ${({aff})=> 36*(aff+2)+2}px;
+    width: ${({$aff})=> 36*($aff+2)+2}px;
     display: flex;
     align-items: center;
     justify-content: center;
 `
     
 export const AffContainer = styled.div`
-    width: ${({aff})=> 36*(aff)+2}px;
-    height: ${({aff})=> 36*(aff)+2}px;
+    width: ${({$aff})=> 36*($aff)+2}px;
+    height: ${({$aff})=> 36*($aff)+2}px;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid #74A0AD;

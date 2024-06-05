@@ -62,4 +62,21 @@ export const BtnContainer = styled.div`
     justify-content: flex-end;
     gap: 8px;
     align-items: center;
+    .radio-btn{
+        padding: 0 8px;
+        display: flex;
+        gap: 16px;
+        font-weight: 600;
+        .radio-control{
+            cursor: pointer;
+        }
+        label{
+            margin-left: 4px;
+            cursor: pointer;
+        }
+        input{
+            cursor: pointer;
+
+        }
+    }
 `

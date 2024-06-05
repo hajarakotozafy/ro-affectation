@@ -16,7 +16,7 @@ const Table = ({HTitle,VTitle,affectation, values, BottomTitle, RightTitle}) => 
     const GenerateTableCells = (cellNb, aff) => {
         const cellsToShow = [];
         for(let i = 0; i < cellNb; i++){
-            cellsToShow.push(<TableCell value={aff[i].value} color={aff[i].color}/>)
+            cellsToShow.push(<TableCell key={i} value={aff[i].value} color={aff[i].color}/>)
         }
     
         return cellsToShow;
@@ -24,7 +24,7 @@ const Table = ({HTitle,VTitle,affectation, values, BottomTitle, RightTitle}) => 
 
     return (
         <TableContainer>
-            <HorizontalH aff={affectation}>
+            <HorizontalH $aff={affectation}>
                 <TableCell value="" color=""/>
                 {generateHead(affectation,HTitle)}
                 <TableCell value="" color=""/>
@@ -34,17 +34,17 @@ const Table = ({HTitle,VTitle,affectation, values, BottomTitle, RightTitle}) => 
                 <div className="verticalH">
                     {generateHead(affectation,VTitle)}
                 </div>
-            <AffContainer aff={affectation}>
-                {GenerateTableCells(affectation*affectation, values)}
-            </AffContainer>
-                <div className="verticalH">
+                <AffContainer $aff={affectation}>
+                    {GenerateTableCells(affectation*affectation, values)}
+                </AffContainer>
+                <div className="verticalH" style={{'display': 'flex', 'flexDirection': 'column'}}>
                 {generateHead(affectation, RightTitle)}
                 </div>
             </AffCont>
 
-            <HorizontalH aff={affectation}>
+            <HorizontalH $aff={affectation}>
                 <TableCell value="" color=""/>
-                    {generateHead(affectation, BottomTitle)}
+                {generateHead(affectation, BottomTitle)}
                 <TableCell value="" color=""/>
             </HorizontalH>
         </TableContainer>

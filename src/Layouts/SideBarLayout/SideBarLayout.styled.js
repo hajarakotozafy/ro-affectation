@@ -9,7 +9,7 @@ export const SideBarLayoutContainer = styled.div`
     background: #E0E9F0;
     transition: 0.3s ease;
     @media screen and (max-width: 750px){
-        right: ${props => props.active? '0': '-100%'};
+        right: ${props => props.$active? '0': '-100%'};
         z-index: 999999;
         width: 100%;
     }
